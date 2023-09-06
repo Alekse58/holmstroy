@@ -66,6 +66,7 @@ class AboutAs(models.Model):
 
 
 class Feedback(models.Model):
+    image = models.ImageField(upload_to='media/services/feedback', null=True)
     text = models.CharField(max_length=500, null=True)
     FIO = models.CharField(max_length=100, null=True)
 
