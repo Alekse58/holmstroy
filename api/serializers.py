@@ -80,14 +80,6 @@ class HoweWorkSerializer(serializers.ModelSerializer):
 
 
 class AboutAsSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AboutAs
-        fields = '__all__'
-
-class AboutAsSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField(max_length=None, use_url=True)
-
     class Meta:
         model = AboutAs
         fields = '__all__'

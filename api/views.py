@@ -47,8 +47,8 @@ class CombinedDataView(APIView):
         howework = HoweWork.objects.all()
         products = Product.objects.all()
         services = Services.objects.all()
-        feedback = Feedback.objects.all()
         about = AboutAs.objects.all()
+        feedback = Feedback.objects.all()
         serializer = CombinedDataSerializer({
             'main': main,
             'howework': howework,
