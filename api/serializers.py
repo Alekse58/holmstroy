@@ -2,7 +2,8 @@ from django.conf import settings
 from rest_framework import serializers
 from rest_framework.generics import RetrieveAPIView
 
-from .models import Header, IconMain, SlideMain, FeedbackPost, Product, Services, Feedback, StaticText, HoweWork, Main
+from .models import Header, IconMain, SlideMain, FeedbackPost, Product, Services, Feedback, StaticText, HoweWork, Main, \
+    AboutAs
 
 
 class IconMainSerializers(serializers.ModelSerializer):
@@ -78,6 +79,21 @@ class HoweWorkSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class AboutAsSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(max_length=None, use_url=True)
+
+    class Meta:
+        model = AboutAs
+        fields = '__all__'
+
+class AboutAsSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(max_length=None, use_url=True)
+
+    class Meta:
+        model = AboutAs
+        fields = '__all__'
+
+
 class MainSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(max_length=None, use_url=True)
 
@@ -93,3 +109,4 @@ class CombinedDataSerializer(serializers.Serializer):
     products = ProductSerializer(many=True)
     services = ServicesSerializer(many=True)
     feedback = FeedbackSerializer(many=True)
+    about = AboutAsSerializer(many=True)

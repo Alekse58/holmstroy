@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics
-from .models import Header, FeedbackPost, Product, Services, Feedback, StaticText, Main, HoweWork
+from .models import Header, FeedbackPost, Product, Services, Feedback, StaticText, Main, HoweWork, AboutAs
 from .serializers import HeaderSerializers, FooterSerializers, FeedbackSerializer, FeedbackPostSerializer, \
     CombinedDataSerializer
 
@@ -48,13 +48,14 @@ class CombinedDataView(APIView):
         products = Product.objects.all()
         services = Services.objects.all()
         feedback = Feedback.objects.all()
-
+        about = AboutAs.objects.all()
         serializer = CombinedDataSerializer({
             'main': main,
             'howework': howework,
             'static': active_static_texts,
             'products': products,
             'services': services,
+            'about': about,
             'feedback': feedback,
         })
 

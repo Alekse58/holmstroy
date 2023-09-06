@@ -86,7 +86,7 @@ class FeedbackPost(models.Model):
 
     def send_telegram_message(self):
         message_text = f'Пришла новая заявка!\nИмя: {self.name}\nТелефон: {self.phone_number}'
-        chat_id = '680617843'  # Получаем chat_id из модели
+        chat_id = '680617843'
         bot.sendMessage(chat_id, message_text)
 
     def save(self, *args, **kwargs):
