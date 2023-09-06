@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from api.models import Header, SlideMain, IconMain, FeedbackPost, Product, Services, Feedback, StaticText
+from api.models import Header, SlideMain, IconMain, FeedbackPost, Product, Services, Feedback, StaticText, AboutAs, \
+    HoweWork, Main
 
 
 # Register your models here.
@@ -26,7 +27,6 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone_number')
 
 
-
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'price')
@@ -37,10 +37,23 @@ class ServicesAdmin(admin.ModelAdmin):
     list_display = ('title', 'text')
 
 
+@admin.register(AboutAs)
+class AboutASAdmin(admin.ModelAdmin):
+    list_display = ('text',)
+
+
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('FIO', 'text')
 
+
+@admin.register(HoweWork)
+class HoweWorkAsAdmin(admin.ModelAdmin):
+    list_display = ('title','text','icon')
+
+@admin.register(Main)
+class MainAsAdmin(admin.ModelAdmin):
+    list_display = ('title','image','text')
 
 @admin.register(StaticText)
 class StaticTextAdmin(admin.ModelAdmin):

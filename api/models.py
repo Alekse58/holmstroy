@@ -10,9 +10,11 @@ class Header(models.Model):
     email = models.EmailField(null=True)
     phone_number = models.CharField(max_length=15)
     year = models.IntegerField(null=True)
+    company_description = models.TextField(null=True, max_length=150)
+    user_agreement = models.FileField(upload_to='user_agreements/', null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Хедер'
+        verbose_name_plural = 'Хедер и футер'
 
 
 class SlideMain(models.Model):
@@ -70,9 +72,7 @@ class Feedback(models.Model):
         return self.FIO
 
     class Meta:
-        verbose_name_plural = 'О нас'
-
-
+        verbose_name_plural = 'Отзывы'
 
 
 # Создайте экземпляр бота
@@ -105,3 +105,18 @@ class StaticText(models.Model):
 
     class Meta:
         verbose_name_plural = 'Текст на сайте'
+
+
+class HoweWork(models.Model):
+    icon = models.CharField(max_length=100, null=True)
+    title = models.CharField(max_length=100, null=True)
+    text = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Как мы работаем'
+
+
+class Main(models.Model):
+    image = models.ImageField(upload_to='media/Main')
+    title = models.CharField(max_length=100, null=True)
+    text = models.CharField(max_length=100, null=True)
