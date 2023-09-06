@@ -99,5 +99,6 @@ class CombinedDataSerializer(serializers.Serializer):
     howework = HoweWorkSerializer(many=True)
     products = ProductSerializer(many=True)
     services = ServicesSerializer(many=True)
-    feedback = FeedbackSerializer(many=True)
     about = AboutAsSerializer(many=True)
+    feedback = FeedbackSerializer(many=True)
+
