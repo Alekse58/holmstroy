@@ -59,6 +59,7 @@ class Services(models.Model):
 
 
 class AboutAs(models.Model):
+    image = models.ImageField(upload_to='media/about', null=True)
     text = models.CharField(max_length=500, null=True)
 
     class Meta:
