@@ -20,7 +20,7 @@ class CombinedAPIView(APIView):
         if footer_instances:
             first_footer_instance = footer_instances[0]
             if first_footer_instance.user_agreement:
-                user_agreement_url = request.build_absolute_uri(first_footer_instance.user_agreement.url)
+                user_agreement_url = request.build_absolute_uri(f"/api{first_footer_instance.user_agreement.url}")
 
         print(user_agreement_url)
 

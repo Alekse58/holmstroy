@@ -49,6 +49,7 @@ class Services(models.Model):
     image = models.ImageField(upload_to='media/services')
     title = models.CharField(max_length=100, null=True)
     text = models.CharField(max_length=100, null=True)
+    price = models.IntegerField(null=True, default='100')
 
     def __str__(self):
         return self.title

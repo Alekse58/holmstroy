@@ -79,9 +79,11 @@ class HoweWorkSerializer(serializers.ModelSerializer):
 
 
 class MainSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(max_length=None, use_url=True)
+
     class Meta:
         model = Main
-        fields = '__all__'
+        fields = ['title', 'text', 'image']
 
 
 class CombinedDataSerializer(serializers.Serializer):
