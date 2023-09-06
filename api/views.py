@@ -33,7 +33,7 @@ class CombinedDataView(APIView):
         feedback = Feedback.objects.all()
 
         serializer = CombinedDataSerializer({
-            'static': StaticTextSerializer(active_static_texts, many=True),
+            'static': active_static_texts,
             'products': products,
             'services': services,
             'feedback': feedback,

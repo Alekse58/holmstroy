@@ -66,11 +66,6 @@ class FeedbackSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class StaticInfoSerializer(serializers.Serializer):
-    title = serializers.CharField()
-    text = serializers.CharField()
-
-
 class StaticTextSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaticText
@@ -78,7 +73,7 @@ class StaticTextSerializer(serializers.ModelSerializer):
 
 
 class CombinedDataSerializer(serializers.Serializer):
-    static = StaticInfoSerializer()
+    static = StaticTextSerializer(many=True)
     products = ProductSerializer(many=True)
     services = ServicesSerializer(many=True)
     feedback = FeedbackSerializer(many=True)
