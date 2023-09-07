@@ -28,7 +28,7 @@ class HeaderSerializers(serializers.ModelSerializer):
 
 
 class FooterSerializers(serializers.ModelSerializer):
-    array_icon = SlideMainSerializers(source='icon_slide', many=True)
+    array_icon = IconMainSerializers(source='icon_slide', many=True)
 
     class Meta:
         model = Header
