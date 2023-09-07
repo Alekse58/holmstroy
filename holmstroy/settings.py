@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = []
+CORS_ALLOW_HEADERS = ['*']
 ROOT_URLCONF = 'holmstroy.urls'
 CORS_ALLOW_ALL_ORIGINS = True
 
